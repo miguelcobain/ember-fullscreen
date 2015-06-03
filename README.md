@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
 
 Use it on your templates to conditionally render depending on a boolean:
 
-```handlebars
+```hbs
 {{#if fullscreen.isEnabled}}
   I'm fullscreen
 {{else}}
@@ -52,7 +52,7 @@ Use it on your templates to conditionally render depending on a boolean:
 
 Only display a button to enter fullscreen if the browser supports it:
 
-```handlebars
+```hbs
 {{#if fullscreen.isAvailable}}
   <button {{action "toggleFullscreen"}}>
     Toggle fullscreen
@@ -62,7 +62,7 @@ Only display a button to enter fullscreen if the browser supports it:
 
 Use it on a component to make a DOM element go fullscreen:
 
-```handlebars
+```javascript
 export default Ember.Component.extend({
   actions: {
     toggleImgFullscreen() {
