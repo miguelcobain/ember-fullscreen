@@ -1,3 +1,9 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<h2 id="title">ember-fullscreen</h2>
 
-{{outlet}}
+<h3>Page fullscreen</h3>
+<button {{action "toggleFullscreen"}}>Toggle fullscreen</button>
+<p>Fullscreen {{if fullscreen.isEnabled "enabled" "disabled"}}</p>
+
+<h3>Element fullscreen</h3>
+<p>Click the cat to make it fullscreen.</p>
+{{fullscreen-img src="cat.jpg" id="demo-img"}}

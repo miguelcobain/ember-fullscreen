@@ -1,0 +1,9 @@
+#demo-img {
+  height: auto;
+  width: 300px;
+}
+
+#demo-img:-webkit-full-screen {
+  height: auto;
+  width: 100%;
+}

@@ -1,0 +1,1 @@
+export { default } from 'ember-fullscreen/services/fullscreen';

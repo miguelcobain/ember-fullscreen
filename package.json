@@ -1,7 +1,7 @@
 {
   "name": "ember-fullscreen",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Fullscreen API packaged as an Ember service.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,11 +11,11 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/miguelcobain/ember-fullscreen",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Miguel Andrade <jmandrade0@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
@@ -29,13 +29,15 @@
     "ember-cli-qunit": "0.3.13",
     "ember-cli-uglify": "^1.0.1",
     "ember-data": "1.0.0-beta.18",
+    "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.2",
-    "ember-disable-prototype-extensions": "^1.0.0",
     "ember-try": "0.0.4"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "fullscreen",
+    "screenfull"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0"
