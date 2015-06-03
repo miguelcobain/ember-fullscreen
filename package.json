@@ -1,6 +1,6 @@
 {
   "name": "ember-fullscreen",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fullscreen API packaged as an Ember service.",
   "directories": {
     "doc": "doc",
