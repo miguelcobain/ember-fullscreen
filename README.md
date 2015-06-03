@@ -64,14 +64,12 @@ Only display a button to enter fullscreen if the browser supports it:
 {{/if}}
 ```
 
-Use it on a component to make a DOM element go fullscreen:
+A simple component that sets its own element to fullscreen on click:
 
 ```javascript
 export default Ember.Component.extend({
-  actions: {
-    toggleImgFullscreen() {
-      this.fullscreen.toggle(this.$('img')[0]);
-    }
+  click() {
+    this.fullscreen.toggle(this.element);
   }
 });
 ```
