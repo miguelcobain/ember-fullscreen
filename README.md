@@ -4,6 +4,8 @@
 
 ember-fullscreen uses [Screenfull](https://github.com/sindresorhus/screenfull.js/) for the all the Fullscreen API calls. This means that ember-fullscreen will work on every browser that supports fullscreen API/screenfull: http://caniuse.com/fullscreen
 
+Check minimal [demo](http://miguelcobain.github.io/ember-fullscreen/).
+
 ## Installation
 
 ember-fullscreen is an ember-cli addon. Just run the install command on your ember-cli project:
@@ -14,7 +16,7 @@ For more information on using ember-cli, visit [http://www.ember-cli.com/](http:
 
 ## Usage
 
-The fullscreen service is injected into all controllers and components. To access it from a controller, you can just use `this.fullscreen`.
+The fullscreen service is injected into all controllers and components. To access it from a controller, you can just use `this.fullscreen`:
 
 - `.isAvailable` - A boolean that represents whether you are allowed to enter fullscreen.
 
@@ -25,6 +27,8 @@ The fullscreen service is injected into all controllers and components. To acces
 - `.disable()` - Disables fullscreen mode.
 
 - `.toggle()` - Enables fullscreen mode if not active, disables if active. Also accepts an optional DOM element.
+
+- `.on('error', ...)` - Fullscreen service includes [Ember.Evented](http://emberjs.com/api/classes/Ember.Evented.html) mixin. When a fullscreen request fails, ember-fullscreen triggers an `error` event.
 
 ## Examples
 
