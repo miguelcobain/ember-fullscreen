@@ -16,15 +16,15 @@ For more information on using ember-cli, visit [http://www.ember-cli.com/](http:
 
 The fullscreen service is injected into all controllers and components. To access it from a controller, you can just use `this.fullscreen`.
 
-`.isAvailable` - A boolean that represents whether you are allowed to enter fullscreen.
+- `.isAvailable` - A boolean that represents whether you are allowed to enter fullscreen.
 
-`.isEnabled` - A boolean that represents whether you are in fullscreen mode.
+- `.isEnabled` - A boolean that represents whether you are in fullscreen mode.
 
-`.enable()` - Enters fullscreen mode. Accepts a DOM element. Default is <html>. If called with another element than the currently active, it will switch to that if it's a decendant. Yes, you can make DOM elements fullscreen.
+- `.enable()` - Enters fullscreen mode. Accepts a DOM element. Default is <html>. If called with another element than the currently active, it will switch to that if it's a decendant. Yes, you can make DOM elements fullscreen.
 
-`.disable()` - Disables fullscreen mode.
+- `.disable()` - Disables fullscreen mode.
 
-`.toggle()` - Enables fullscreen mode if not active, disables if active. Also accepts an optional DOM element.
+- `.toggle()` - Enables fullscreen mode if not active, disables if active. Also accepts an optional DOM element.
 
 ## Examples
 
