@@ -5,6 +5,7 @@ export function initialize(container, app) {
   app.register('fullscreen:main', Fullcreen);
   app.inject('controller', 'fullscreen', 'fullscreen:main');
   app.inject('component', 'fullscreen', 'fullscreen:main');
+  app.inject('route', 'fullscreen', 'fullscreen:main');
 }
 
 export default {
