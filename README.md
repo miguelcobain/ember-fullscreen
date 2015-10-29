@@ -78,5 +78,5 @@ Bind an icon class depending on wether we're in fullscreen:
 
 ```hbs
 {{!-- Uses font-awesome --}}
-<i class="{{if fullscreen.isEnabled "fa-compress" "fa-expand"}}"></i></a>
+<i class="{{if fullscreen.isEnabled "fa-compress" "fa-expand"}}"></i>
 ```
