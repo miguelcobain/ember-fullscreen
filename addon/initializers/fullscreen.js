@@ -1,6 +1,10 @@
+import Ember from 'ember';
 import Fullcreen from '../services/fullscreen';
 
-export function initialize(application) {
+const [ , MAJOR, MINOR, PATCH ] = Ember.VERSION.match(/^(\d+)\.(\d+)\.(\d+)/).map(Number);
+
+export function initialize() {
+  var application = MAJOR >= 2 ? arguments[0] : arguments[1];
   application.register('fullscreen:main', Fullcreen);
   application.inject('controller', 'fullscreen', 'fullscreen:main');
   application.inject('component', 'fullscreen', 'fullscreen:main');
