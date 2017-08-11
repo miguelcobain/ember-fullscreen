@@ -17,9 +17,13 @@ module.exports = {
       files: ['screenfull.js']
     });
 
-    return mergeTrees([
-      tree,
-      screenfull
-    ]);
+    if (tree) {
+      return mergeTrees([
+        tree,
+        screenfull
+      ]);
+    } else {
+      return screenfull;
+    }
   }
 };
