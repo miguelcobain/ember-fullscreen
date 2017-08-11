@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   fullscreen: Ember.inject.service(),
   actions: {
-    toggleFullscreen: function() {
+    toggleFullscreen() {
       this.get('fullscreen').toggle();
     }
   }
