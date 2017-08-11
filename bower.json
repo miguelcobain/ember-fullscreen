@@ -1,6 +1,0 @@
-{
-  "name": "ember-fullscreen",
-  "dependencies": {
-    "screenfull": "~2.0.0"
-  }
-}
