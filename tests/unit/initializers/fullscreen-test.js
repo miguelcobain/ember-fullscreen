@@ -1,22 +1,23 @@
 import Ember from 'ember';
-import { initialize } from '../../../initializers/fullscreen';
+import { initialize } from 'dummy/initializers/fullscreen';
 import { module, test } from 'qunit';
-
-var container, application;
+import destroyApp from '../../helpers/destroy-app';
 
 module('Unit | Initializer | fullscreen', {
-  beforeEach: function() {
-    Ember.run(function() {
-      application = Ember.Application.create();
-      container = application.__container__;
-      application.deferReadiness();
+  beforeEach() {
+    Ember.run(() => {
+      this.application = Ember.Application.create();
+      this.application.deferReadiness();
     });
+  },
+  afterEach() {
+    destroyApp(this.application);
   }
 });
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  initialize(application);
+  initialize(this.application);
 
   // you would normally confirm the results of the initializer here
   assert.ok(true);
