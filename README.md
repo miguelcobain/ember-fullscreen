@@ -36,9 +36,10 @@ Create a button in your controller with an action that toggles fullscreen mode:
 
 ```javascript
 export default Ember.Controller.extend({
+  fullscreen: Ember.inject.service(),
   actions: {
     toggleFullscreen() {
-      this.fullscreen.toggle();
+      this.get('fullscreen').toggle();
     }
   }
 });
@@ -68,8 +69,9 @@ A simple component that sets its own element to fullscreen on click:
 
 ```javascript
 export default Ember.Component.extend({
+  fullscreen: Ember.inject.service(),
   click() {
-    this.fullscreen.toggle(this.element);
+    this.get('fullscreen').toggle(this.element);
   }
 });
 ```
