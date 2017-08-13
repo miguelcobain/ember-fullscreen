@@ -1,25 +1,26 @@
 /* eslint-env node */
 'use strict';
 
-const Funnel = require('broccoli-funnel');
-const mergeTrees = require('broccoli-merge-trees');
-const path = require('path');
+const fastbootTransform = require('fastboot-transform');
 
 module.exports = {
   name: 'ember-fullscreen',
 
-  included(app) {
-    app.import('vendor/screenfull.js');
+  options: {
+    nodeAssets: {
+      screenfull: {
+        srcDir: 'dist',
+        vendor: {
+          include: ['screenfull.js'],
+          processTree(input) {
+            return fastbootTransform(input);
+          }
+        }
+      }
+    }
   },
 
-  treeForVendor(tree) {
-    let screenfull = new Funnel(path.dirname(require.resolve('screenfull/dist/screenfull.js')), {
-      files: ['screenfull.js']
-    });
-
-    return mergeTrees([
-      tree,
-      screenfull
-    ]);
+  included(app) {
+    app.import('vendor/screenfull/screenfull.js');
   }
 };
