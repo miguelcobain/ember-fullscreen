@@ -16,7 +16,7 @@ For more information on using ember-cli, visit [http://www.ember-cli.com/](http:
 
 ## Usage
 
-The fullscreen service is injected into all controllers, components and routes. To access it from any of them, you can just use the property `this.fullscreen`:
+Inject the service anywhere you need it by adding `fullscreen: Ember.inject.service()`. The fullscreen service has the following properties and methods:
 
 - `.isAvailable` - A boolean that represents whether you are allowed to enter fullscreen.
 
