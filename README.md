@@ -30,6 +30,8 @@ The fullscreen service is injected into all controllers, components and routes. 
 
 - `.on('error', ...)` - Fullscreen service includes [Ember.Evented](http://emberjs.com/api/classes/Ember.Evented.html) mixin. When a fullscreen request fails, ember-fullscreen triggers an `error` event.
 
+- `.on('fullscreenChange', ...)` - When the fullscreen state changes, ember-fullscreen notifies the new `isEnabled` state.
+
 ## Examples
 
 Create a button in your controller with an action that toggles fullscreen mode:

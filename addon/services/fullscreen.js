@@ -31,7 +31,10 @@ export default Ember.Service.extend(Ember.Evented, {
   }),
 
   updateEnabled() {
-    this.set('isEnabled', this.screenfull.isFullscreen);
+    let isFullscreenEnabled = this.screenfull.isFullscreen;
+
+    this.set('isEnabled', isFullscreenEnabled);
+    this.trigger('fullscreenChange', isFullscreenEnabled);
   },
 
   onError(event) {
