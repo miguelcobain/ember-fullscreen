@@ -1,21 +1,28 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { bind } from '@ember/runloop';
+import Evented from '@ember/object/evented';
+import Service from '@ember/service';
 /* global screenfull */
 
-export default Ember.Service.extend(Ember.Evented, {
+export default Service.extend(Evented, {
+  screenfull,
 
-  screenfull: screenfull,
+  init() {
+    this._super(...arguments);
+    this.setupListeners();
+  },
 
-  setupListeners: Ember.on('init', function() {
+  setupListeners() {
     if (this.get('isAvailable')) {
 
       this.updateEnabled();
-      this.handler = Ember.run.bind(this, this.updateEnabled);
-      this.errorHandler = Ember.run.bind(this, this.onError);
+      this.handler = bind(this, this.updateEnabled);
+      this.errorHandler = bind(this, this.onError);
 
       document.addEventListener(this.screenfull.raw.fullscreenchange, this.handler);
       document.addEventListener(this.screenfull.raw.fullscreenerror, this.errorHandler);
     }
-  }),
+  },
 
   willDestroy() {
     if (this.get('isAvailable')) {
@@ -26,7 +33,7 @@ export default Ember.Service.extend(Ember.Evented, {
 
   isEnabled: false,
 
-  isAvailable: Ember.computed(function() {
+  isAvailable: computed(function() {
     return this.screenfull.enabled;
   }),
 

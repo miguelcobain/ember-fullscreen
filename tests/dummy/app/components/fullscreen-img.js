@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'img',
   attributeBindings: ['src', 'width', 'height'],
-  fullscreen: Ember.inject.service(),
+  fullscreen: service(),
 
   click() {
     this.get('fullscreen').toggle(this.element);
