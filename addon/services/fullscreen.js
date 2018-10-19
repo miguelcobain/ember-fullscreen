@@ -2,10 +2,20 @@ import { computed } from '@ember/object';
 import { bind } from '@ember/runloop';
 import Evented from '@ember/object/evented';
 import Service from '@ember/service';
+import { assert } from '@ember/debug';
 /* global screenfull */
 
 export default Service.extend(Evented, {
-  screenfull,
+  isFastboot: computed(function() {
+    const container = getOwner(this);
+    assert('You may only use isFastBoot() on a container-aware object', container && typeof container.lookup === 'function');
+
+    const fastboot = container.lookup('service:fastboot');
+    return fastboot ? fastboot.get('isFastBoot') : false;
+  }),
+  screenfull: computed(function() {
+    return this.get('isFastboot') ? null : screenfull;
+  }),
 
   init() {
     this._super(...arguments);
