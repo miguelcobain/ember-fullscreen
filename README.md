@@ -37,8 +37,8 @@ Inject the service anywhere you need it by adding `fullscreen: Ember.inject.serv
 Create a button in your controller with an action that toggles fullscreen mode:
 
 ```javascript
-export default Ember.Controller.extend({
-  fullscreen: Ember.inject.service(),
+export default Controller.extend({
+  fullscreen: service(),
   actions: {
     toggleFullscreen() {
       this.get('fullscreen').toggle();
@@ -61,7 +61,7 @@ Only display a button to enter fullscreen if the browser supports it:
 
 ```hbs
 {{#if fullscreen.isAvailable}}
-  <button {{action "toggleFullscreen"}}>
+  <button onclick={{action "toggleFullscreen"}}>
     Toggle fullscreen
   </button>
 {{/if}}
@@ -70,8 +70,8 @@ Only display a button to enter fullscreen if the browser supports it:
 A simple component that sets its own element to fullscreen on click:
 
 ```javascript
-export default Ember.Component.extend({
-  fullscreen: Ember.inject.service(),
+export default Component.extend({
+  fullscreen: service(),
   click() {
     this.get('fullscreen').toggle(this.element);
   }

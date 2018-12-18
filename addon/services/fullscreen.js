@@ -2,7 +2,7 @@ import { computed } from '@ember/object';
 import { bind } from '@ember/runloop';
 import Evented from '@ember/object/evented';
 import Service from '@ember/service';
-/* global screenfull */
+import screenfull from 'screenfull';
 
 export default Service.extend(Evented, {
   screenfull,
@@ -34,7 +34,7 @@ export default Service.extend(Evented, {
   isEnabled: false,
 
   isAvailable: computed(function() {
-    return this.screenfull.enabled;
+    return this.screenfull && this.screenfull.enabled;
   }),
 
   updateEnabled() {
@@ -49,15 +49,15 @@ export default Service.extend(Evented, {
   },
 
   enable(elem) {
-    this.screenfull.request(elem);
+    this.screenfull && this.screenfull.request(elem);
   },
 
   disable() {
-    this.screenfull.exit();
+    this.screenfull && this.screenfull.exit();
   },
 
   toggle(elem) {
-    this.screenfull.toggle(elem);
+    this.screenfull && this.screenfull.toggle(elem);
   }
 
 });
