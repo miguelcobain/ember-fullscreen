@@ -19,15 +19,15 @@ export default Service.extend(Evented, {
       this.handler = bind(this, this.updateEnabled);
       this.errorHandler = bind(this, this.onError);
 
-      document.addEventListener(this.screenfull.raw.fullscreenchange, this.handler);
-      document.addEventListener(this.screenfull.raw.fullscreenerror, this.errorHandler);
+      this.screenfull.on('change', this.handler);
+      this.screenfull.on('error', this.errorHandler);
     }
   },
 
   willDestroy() {
     if (this.get('isAvailable')) {
-      document.removeEventListener(this.screenfull.raw.fullscreenchange, this.handler);
-      document.removeEventListener(this.screenfull.raw.fullscreenerror, this.errorHandler);
+      this.screenfull.off('change', this.handler);
+      this.screenfull.off('error', this.errorHandler);
     }
   },
 

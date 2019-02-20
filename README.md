@@ -1,4 +1,6 @@
 # ember-fullscreen
+[![Ember Observer Score](https://emberobserver.com/badges/ember-fullscreen.svg)](https://emberobserver.com/addons/ember-fullscreen)
+[![npm version](https://badge.fury.io/js/ember-fullscreen.svg)](https://badge.fury.io/js/ember-fullscreen)
 
 > [Fullscreen API](https://fullscreen.spec.whatwg.org/) packaged as an [Ember service](http://emberjs.com/api/classes/Ember.Service.html).
 
@@ -10,7 +12,9 @@ Check minimal [demo](http://miguelcobain.github.io/ember-fullscreen/).
 
 ember-fullscreen is an ember-cli addon. Just run the install command on your ember-cli project:
 
-    $ ember install ember-fullscreen
+```bash
+ember install ember-fullscreen
+```
 
 For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
 

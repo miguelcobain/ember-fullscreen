@@ -23,9 +23,10 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "ember-auto-import": "^1.2.19",
-    "ember-cli-babel": "^7.1.2",
-    "screenfull": "^3.3.3"
+    "ember-auto-import": "^1.2.20",
+    "ember-cli-babel": "^7.4.3",
+    "ember-cli-promises-polyfill": "0.0.2",
+    "screenfull": "^4.0.1"
   },
   "devDependencies": {
     "@ember/optional-features": "^0.6.3",
